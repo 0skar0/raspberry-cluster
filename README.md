@@ -32,7 +32,7 @@ Each cluster consists of 4 nodes. Organize yourselves so that each team member c
 
     Kubernetes is an container orchestrator that runs on docker.
 
-    Run the following command to install docker comminuty edition on the node:
+    Run the following command to install docker community edition on the node:
 
     ```sh
     curl -sSL get.docker.com | sh
@@ -207,15 +207,16 @@ For educational purposes, we use LEDs to show the loads running on the cluster. 
 When pods are terminated, a grace period allows for graceful termination of services. For his reason, it takes a few seconds for a LED to turn off after it's been terminated.
 
 Table of LED colors:
-|Color       |Pods|
-|------------|----|
-|<span style="color:red">Red</span>  |whack a pod (initially)
-|<span style="color:green">Green</span>  |whack a pod (after upgrade)
-|<span style="color:yellow">Yellow</span>  |node presentation
-|<span style="color:blue">Blue</span> | nginx ingress
-|<span style="color:purple">Purple</span> |404-service
-|<span style="color:green">Green flash</span> |pod is starting
-|<span style="color:red">Red flash</span>   |pod is terminating
+
+| Color       | Pods   |
+| ------------ | :----: |
+| <span style="color:red">Red</span> | whack a pod (initially) |
+| <span style="color:green">Green</span> | whack a pod (after upgrade) |
+| <span style="color:yellow">Yellow</span> | node presentation |
+| <span style="color:blue">Blue</span> | nginx ingress |
+| <span style="color:purple">Purple</span> | 404-service |
+| <span style="color:green">Green flash</span> | pod is starting |
+| <span style="color:red">Red flash</span> | pod is terminating |
 
 1. Grant access to the blinkt pods to get pod information from the kubernetes API:
 
@@ -223,7 +224,7 @@ Table of LED colors:
     kubectl create -f https://raw.githubusercontent.com/apprenda/blinkt-k8s-controller/master/kubernetes/blinkt-k8s-controller-rbac.yaml
     ```
 
-    Role Based Acces Control (RBAC) policies specify which kubernetes API calls can be made, in which namespaces by which users or service accounts. This allows for fine grained access control of kubernetes resouces.
+    Role Based Access Control (RBAC) policies specify which kubernetes API calls can be made, in which namespaces by which users or service accounts. This allows for fine grained access control of kubernetes resources.
 
     To show the status of the pods in the cluster, the blinkt pods must be allowed to read pod status from the API.
 
